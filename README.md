@@ -22,12 +22,14 @@
 
 ### 资料
 #### VBA 相关
-- (VBA学习笔记)[https://zhuanlan.zhihu.com/p/87580525]
-- (全民一起VBA基础篇(Excel数据处理) 杨洋老师)[https://study.163.com/course/courseMain.htm?courseId=1003088001]
-- (Office VBA 参考)[https://docs.microsoft.com/zh-cn/office/vba/api/overview/]
+- [EXCEL VBA 入门到精通详细教程](https://www.lanrenexcel.com/excel-vba-tutorial/)
+- [Office VBA 参考](https://docs.microsoft.com/zh-cn/office/vba/api/overview)
+- [Excel VBA 编程教程](https://www.w3cschool.cn/excelvba/)
+- [全民一起VBA基础篇 学习笔记](https://zhuanlan.zhihu.com/p/87580525)
+- [全民一起VBA基础篇 (Excel数据处理 视频)](https://study.163.com/course/courseMain.htm?courseId=1003088001)
 
 #### python
-- (pywin32 介绍 教学)[https://zhuanlan.zhihu.com/p/67543981]
+- [pywin32 介绍 教学](https://zhuanlan.zhihu.com/p/67543981)
 
 
 ### 困惑
