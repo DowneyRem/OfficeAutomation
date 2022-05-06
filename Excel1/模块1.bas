@@ -1,44 +1,44 @@
-Attribute VB_Name = "Ä£¿é1"
-Sub ×Ô¶¯1()
-Attribute ×Ô¶¯1.VB_ProcData.VB_Invoke_Func = " \n14"
+Attribute VB_Name = "æ¨¡å—1"
+Sub è‡ªåŠ¨1()
+Attribute è‡ªåŠ¨1.VB_ProcData.VB_Invoke_Func = " \n14"
 
 
-    If InStr(1, ActiveSheet.Name, "ÔŞ", vbTextCompare) > 0 Or InStr(1, ActiveSheet.Name, "µã", vbTextCompare) > 0 Then
+    If InStr(1, ActiveSheet.Name, "èµ", vbTextCompare) > 0 Or InStr(1, ActiveSheet.Name, "ç‚¹", vbTextCompare) > 0 Then
     
-        'Ñ¡ÖĞÄ©ĞĞÄ©ÁĞµÄµ¥Ôª¸ñ
+        'é€‰ä¸­æœ«è¡Œæœ«åˆ—çš„å•å…ƒæ ¼
         ActiveCell.SpecialCells(xlLastCell).Select
         
-        '×óÒÆ1ÁĞ£¬²åÈë1ÁĞ
+        'å·¦ç§»1åˆ—ï¼Œæ’å…¥1åˆ—
         ActiveCell.Offset(0, -1).Columns("A:A").EntireColumn.Select
         Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
         
-        'ÓÒÒÆ2ÁĞ£¬¸´ÖÆÊı¾İ
+        'å³ç§»2åˆ—ï¼Œå¤åˆ¶æ•°æ®
         ActiveCell.Offset(0, 2).Columns("A:A").EntireColumn.Select
         Selection.Copy
         
-        '×óÒÆ2ÁĞ£¬Õ³ÌùÊı¾İ
+        'å·¦ç§»2åˆ—ï¼Œç²˜è´´æ•°æ®
         ActiveCell.Offset(0, -2).Columns("A:A").EntireColumn.Select
         Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
             :=False, Transpose:=False
         Application.CutCopyMode = False
         
-        'Êı¾İÊ×ĞĞ£¬¼ÓÈëÈÕÆÚ
+        'æ•°æ®é¦–è¡Œï¼ŒåŠ å…¥æ—¥æœŸ
         Selection.End(xlUp).Select
         ActiveCell.FormulaR1C1 = Date
         
-        'µãÔŞÁ¿Êı¾İ±íÖĞ£¬ĞŞ¸Ä±íÍ·Êı¾İ
-        If InStr(1, ActiveSheet.Name, "ÔŞ", vbTextCompare) > 0 Then
+        'ç‚¹èµé‡æ•°æ®è¡¨ä¸­ï¼Œä¿®æ”¹è¡¨å¤´æ•°æ®
+        If InStr(1, ActiveSheet.Name, "èµ", vbTextCompare) > 0 Then
             ActiveCell.Offset(0, -2).Range("A1:B1").Select
             Selection.AutoFill Destination:=ActiveCell.Range("A1:E1"), Type:=xlFillDefault
             ActiveCell.Offset(0, 2).Columns("A:A").EntireColumn.Select
         End If
         
-        '×óÒÆ4ÁĞ£¬Òş²Ø¸ÃÁĞ
+        'å·¦ç§»4åˆ—ï¼Œéšè—è¯¥åˆ—
         ActiveCell.Offset(0, -4).Columns("A:A").EntireColumn.Select
         Selection.EntireColumn.Hidden = True
         
         
-        '±£´æ
+        'ä¿å­˜
         ActiveWorkbook.Save
         
     End If
@@ -46,34 +46,34 @@ Attribute ×Ô¶¯1.VB_ProcData.VB_Invoke_Func = " \n14"
 End Sub
 
 
-Sub ×Ô¶¯2()
+Sub è‡ªåŠ¨2()
 
 
-    If InStr(1, ActiveSheet.Name, "¸öÈË", vbTextCompare) > 0 Then
+    If InStr(1, ActiveSheet.Name, "ä¸ªäºº", vbTextCompare) > 0 Then
     
-        'Sheets("¸öÈË").Select
+        'Sheets("ä¸ªäºº").Select
         Range("A1:H30").Select
         Selection.ClearContents
         
-        Sheets("ÀÛ¼Æ").Visible = True
-        Sheets("ÀÛ¼Æ").Select
-        'É¸Ñ¡Êı¾İ
-        ActiveSheet.Range("$A$1:$H$51").AutoFilter Field:=2, Criteria1:="ÎÄ"
-        ActiveSheet.Range("$A$1:$H$51").AutoFilter Field:=3, Criteria1:="·ñ"
+        Sheets("ç´¯è®¡").Visible = True
+        Sheets("ç´¯è®¡").Select
+        'ç­›é€‰æ•°æ®
+        ActiveSheet.Range("$A$1:$H$51").AutoFilter Field:=2, Criteria1:="æ–‡"
+        ActiveSheet.Range("$A$1:$H$51").AutoFilter Field:=3, Criteria1:="å¦"
         
         
-        '¸´ÖÆ£¬Õ³Ìù
+        'å¤åˆ¶ï¼Œç²˜è´´
         Range("A1:H43").Select
         Selection.Copy
-        Sheets("¸öÈË").Select
+        Sheets("ä¸ªäºº").Select
         Range("A1").Select
         ActiveSheet.Paste
         Selection.AutoFilter
         
-        ActiveWorkbook.Worksheets("¸öÈË").AutoFilter.Sort.SortFields.Clear
-        ActiveWorkbook.Worksheets("¸öÈË").AutoFilter.Sort.SortFields.Add2 Key:=Range( _
+        ActiveWorkbook.Worksheets("ä¸ªäºº").AutoFilter.Sort.SortFields.Clear
+        ActiveWorkbook.Worksheets("ä¸ªäºº").AutoFilter.Sort.SortFields.Add2 Key:=Range( _
             "H1:H30"), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:=xlSortNormal
-        With ActiveWorkbook.Worksheets("¸öÈË").AutoFilter.Sort
+        With ActiveWorkbook.Worksheets("ä¸ªäºº").AutoFilter.Sort
             .Header = xlYes
             .MatchCase = False
             .Orientation = xlTopToBottom
@@ -81,24 +81,24 @@ Sub ×Ô¶¯2()
             .Apply
         End With
         
-        'Òş²Ø±íµ¥
-        Sheets("ÀÛ¼Æ").Visible = False
+        'éšè—è¡¨å•
+        Sheets("ç´¯è®¡").Visible = False
     End If
     
 End Sub
 
 
-Sub ×Ô¶¯3()
+Sub è‡ªåŠ¨3()
 
 
-    If InStr(1, ActiveSheet.Name, "½üÆÚ", vbTextCompare) > 0 Then
+    If InStr(1, ActiveSheet.Name, "è¿‘æœŸ", vbTextCompare) > 0 Then
         
         Range("G2").Select
-        ActiveWorkbook.Worksheets("½üÆÚ").AutoFilter.Sort.SortFields.Clear
-        ActiveWorkbook.Worksheets("½üÆÚ").AutoFilter.Sort.SortFields.Add2 Key:=Range( _
+        ActiveWorkbook.Worksheets("è¿‘æœŸ").AutoFilter.Sort.SortFields.Clear
+        ActiveWorkbook.Worksheets("è¿‘æœŸ").AutoFilter.Sort.SortFields.Add2 Key:=Range( _
             "G2:G44"), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:=xlSortNormal
             
-        With ActiveWorkbook.Worksheets("½üÆÚ").AutoFilter.Sort
+        With ActiveWorkbook.Worksheets("è¿‘æœŸ").AutoFilter.Sort
             .Header = xlYes
             .MatchCase = False
             .Orientation = xlTopToBottom
@@ -107,11 +107,11 @@ Sub ×Ô¶¯3()
         End With
         
         Range("K2").Select
-        ActiveWorkbook.Worksheets("½üÆÚ").AutoFilter.Sort.SortFields.Clear
-        ActiveWorkbook.Worksheets("½üÆÚ").AutoFilter.Sort.SortFields.Add2 Key:=Range( _
+        ActiveWorkbook.Worksheets("è¿‘æœŸ").AutoFilter.Sort.SortFields.Clear
+        ActiveWorkbook.Worksheets("è¿‘æœŸ").AutoFilter.Sort.SortFields.Add2 Key:=Range( _
             "K2:K44"), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:=xlSortNormal
             
-        With ActiveWorkbook.Worksheets("½üÆÚ").AutoFilter.Sort
+        With ActiveWorkbook.Worksheets("è¿‘æœŸ").AutoFilter.Sort
             .Header = xlYes
             .MatchCase = False
             .Orientation = xlTopToBottom
@@ -124,28 +124,28 @@ Sub ×Ô¶¯3()
 End Sub
 
 
-Sub ×Ô¶¯»¯()
-Attribute ×Ô¶¯»¯.VB_ProcData.VB_Invoke_Func = " \n14"
+Sub è‡ªåŠ¨åŒ–()
+Attribute è‡ªåŠ¨åŒ–.VB_ProcData.VB_Invoke_Func = " \n14"
 
 
-    'Ñ¡ÖĞ¹¤×÷±í£¬ÔËĞĞºê
-    Sheets("µã").Visible = True
-    Sheets("µã").Select
-    Application.Run "ÌÆÃÅĞ¡ËµµãÔŞÍ³¼Æ.xlsm!×Ô¶¯1"
+    'é€‰ä¸­å·¥ä½œè¡¨ï¼Œè¿è¡Œå®
+    Sheets("ç‚¹").Visible = True
+    Sheets("ç‚¹").Select
+    Application.Run "å”é—¨å°è¯´ç‚¹èµç»Ÿè®¡.xlsm!è‡ªåŠ¨1"
     
-    Sheets("ÔŞ").Visible = True
-    Sheets("ÔŞ").Select
-    Application.Run "ÌÆÃÅĞ¡ËµµãÔŞÍ³¼Æ.xlsm!×Ô¶¯1"
+    Sheets("èµ").Visible = True
+    Sheets("èµ").Select
+    Application.Run "å”é—¨å°è¯´ç‚¹èµç»Ÿè®¡.xlsm!è‡ªåŠ¨1"
     
-    Sheets("¸öÈË").Select
-    Application.Run "ÌÆÃÅĞ¡ËµµãÔŞÍ³¼Æ.xlsm!×Ô¶¯2"
+    Sheets("ä¸ªäºº").Select
+    Application.Run "å”é—¨å°è¯´ç‚¹èµç»Ÿè®¡.xlsm!è‡ªåŠ¨2"
         
-    Sheets("½üÆÚ").Select
-    Application.Run "ÌÆÃÅĞ¡ËµµãÔŞÍ³¼Æ.xlsm!×Ô¶¯3"
+    Sheets("è¿‘æœŸ").Select
+    Application.Run "å”é—¨å°è¯´ç‚¹èµç»Ÿè®¡.xlsm!è‡ªåŠ¨3"
     
-    Sheets("µã").Visible = False
-    Sheets("ÔŞ").Visible = False
-    Sheets("Ãû³Æ").Visible = False
+    Sheets("ç‚¹").Visible = False
+    Sheets("èµ").Visible = False
+    Sheets("åç§°").Visible = False
     ActiveWorkbook.Save
     
     
