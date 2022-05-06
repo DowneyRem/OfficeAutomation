@@ -2,7 +2,7 @@
 ## Python 办公自动化(学习)
 
 ### Python 第三方库
-- **pywin32** (但好像VBA)
+- **pywin32** (但写出还好像VBA)
 - ~~python-docx~~
 - ~~python-pptx~~
 - pandas
