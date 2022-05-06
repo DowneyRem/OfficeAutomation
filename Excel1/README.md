@@ -3,16 +3,22 @@
 ### 功能需求分析
 #### Python 处理部分
 1. (定期)从pixiv获取小说数据（小说名称、发布时间、**阅读量、收藏量**）
-![获取数据](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/1.png)
-2. 将数据格式化并保存至文件
-![保存文件](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/2.png)
 
+![获取数据](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/1.png)
+
+2. 将数据格式化并保存至文件
+
+![保存文件](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/2.png)
 
 #### Excel VBA 处理部分
 3. 将数据导入excel表格中
+
 ![导入数据](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/3.png)
+
 4. 使用Excel进行简单的数据分析
+
 ![数据分析](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/4.png)
+
 
 
 ### 实现过程
@@ -27,7 +33,6 @@
 9. ~~使用 WPS Office，分享 xlsx文件~~
 
 
-
 ## 结果与效果
 ### 运行结果
 0. 程序可以自动获取、格式化、处理数据，最终以excel表格的形式呈现出来
@@ -39,9 +44,7 @@
 ![pixiv 数据分析](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/0.png)
 
 
-
 ####  Excel 数据分析
-
 #### 全部小说， 阅读量/收藏量的近期增量
 
 ![数据1](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/4.png)
