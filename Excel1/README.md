@@ -27,21 +27,11 @@
 0. 程序可以自动获取、格式化、处理数据，最终以excel表格的形式呈现出来
 1. 节省每次手动录入数据以及筛选数据的时间，将原来的约15-20分钟，缩短至不到1分钟
 
-### [最终效果](https://www.kdocs.cn/l/cdYJi4uZnKtb)
-
+### 最终效果
 ####  pixiv 数据分析
 ![pixiv 数据分析](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/0.png)
 
-
 ####  Excel 数据分析
 #### 全部小说， 阅读量/收藏量的近期增量
-
 ![数据1](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/4.png)
-
-#### 单篇小说 阅读量/收藏量的每周增量，及数据图
-
-![数据2](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/5.png)
-
-#### 全部小说  阅读量/收藏量分布
-
-![数据3](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/6.png)
+#### [更多内容](https://www.kdocs.cn/l/cdYJi4uZnKtb)
