@@ -5,18 +5,6 @@ from win32com.client import DispatchEx
 
 
 def saveDocx(path, text):
-	extdict={
-		".docx": "16",
-		".docm": "",
-		".doc" : "0",
-		".dotx": "",  #Word 模板
-		".dotm": "",  #启用宏的模板
-		".pdf" : "17",
-		".xps" : "18",
-		".txt" : "7", #Unicode text
-		# ".txt" : "2", #Microsoft Windows text format
-	}
-	
 	word = DispatchEx('Word.Application')  # 独立进程
 	word.Visible = 1  # 0为后台运行
 	word.DisplayAlerts = 0  # 不显示，不警告
