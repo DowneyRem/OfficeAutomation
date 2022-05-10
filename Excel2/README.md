@@ -30,7 +30,7 @@
 2. saveascopy 备份工作簿，将xlsm另存为xlsx
 3. ~~使用 WPS Office，分享 xlsx文件~~
 
-[ 【金山文档】唐门小说更新统计](https://kdocs.cn/l/cgEZR9rebTTE)
+[更多内容](https://kdocs.cn/l/cgEZR9rebTTE)
 
 
 ## 自动宏
