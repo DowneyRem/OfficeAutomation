@@ -125,7 +125,8 @@ End Sub
 
 
 Sub 自动化()
-Attribute 自动化.VB_ProcData.VB_Invoke_Func = " \n14"
+'Sub Auto_Open()
+'可用Auto_Open作为宏名，打开文件时自动运行
 
 
     '选中工作表，运行宏
