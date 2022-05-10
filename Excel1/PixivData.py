@@ -288,7 +288,7 @@ def openExcel(path, Visible=0):  # 打开软件手动操作
 
 @timethis
 @openFileCheck
-def editExcelDoc(path, Visible=0):  # 打开软件自动操作，需要录制宏
+def editExcel(path, Visible=0):  # 打开软件自动操作，需要录制宏
 	extdict={
 		".xlsb": "50",  # Excel 二进制工作簿
 		".xlsx": "51",  # 默认/Open XML 工作簿
@@ -307,16 +307,16 @@ def editExcelDoc(path, Visible=0):  # 打开软件自动操作，需要录制宏
 	wb = excel.Workbooks.Open(path, UpdateLinks=3)  # 打开文档；更新链接
 	wb.Application.Run("自动化")  # 运行宏
 
-	#保存，并另存为 xlsx
-	wb.Save()
-	path = os.path.splitext(path)[0] + ".xlsx"
-	ext = os.path.splitext(path)[1]
-	extnum = extdict.get(ext)
-	wb.SaveAs(path, extnum)
+	# 保存，并另存为 xlsx
+	# wb.Save()
+	# path = os.path.splitext(path)[0] + ".xlsx"
+	# ext = os.path.splitext(path)[1]
+	# extnum = extdict.get(ext)
+	# wb.SaveAs(path, extnum)
 	
-	wb.Close(True)
-	excel.Quit()
-	return path
+	# wb.Close(True)
+	# excel.Quit()
+	# return path
 	
 	
 def desktop():
@@ -363,14 +363,13 @@ if __name__ == '__main__':
 		today_wday = today.isoweekday()
 		
 		if today_wday >= 5 and today - fileModifyTime >= timedelta(5):
-			path = desktop()
-			datapath = saveAsXlsx(16721009, path)
+			datapath = saveAsXlsx(16721009, desktop())
 			# datapath = os.path.join(desktop(), "唐尼瑞姆 唐门.xlsx")
 			openExcel(datapath)
-			path = editExcelDoc(xlsxpath, 0)
+			editExcel(xlsxpath, 1)
 		else:
-			path = os.path.join(path, "唐门小说更新统计.xlsx")
-		openExcel(path, 1)
+			path = os.path.join(path, "唐门小说更新统计.xlsm")
+			openExcel(path, 1)
 
 
 	path = os.getcwd()
