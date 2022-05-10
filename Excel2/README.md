@@ -1,25 +1,39 @@
 ## Excel2
 
 ### 功能需求分析
+
 #### Python 处理部分
 
 0. pywin32 打开Excel
+1. 在表格内填入表格上次保存时间
+2. 关闭时，自动备份（将xlsm另存为xlsx）
 
 #### Excel VBA 处理部分
 
+0. （手动）打开Excel
 1. 在表格内填入表格上次保存时间
-2. 关闭时自动备份（将xlsm另存为xlsx）
+2. 关闭时，自动备份（将xlsm另存为xlsx）
 
 ### 实现过程
 
-1. aoto_close 关闭时候自动运行
-1. saveascopy 备份工作簿，将xlsm另存为xlsx
-9. ~~使用 WPS Office，分享 xlsx文件~~
+#### Python 实现过程
 
-#### [ 【金山文档】唐门小说更新统计](https://kdocs.cn/l/cgEZR9rebTTE)
+0. pywin32 打开Excel
+1. 获取上次文件修改时间
+2. saveascopy 备份工作簿，将xlsm另存为xlsx
+2. ~~使用 WPS Office，分享 xlsx文件~~
+
+#### Excel VBA 实现过程
+
+0. 打开Excel，关闭时自动运行 aoto_close 宏代码
+1. 获取上次文件修改时间
+2. saveascopy 备份工作簿，将xlsm另存为xlsx
+3. ~~使用 WPS Office，分享 xlsx文件~~
+
+[ 【金山文档】唐门小说更新统计](https://kdocs.cn/l/cgEZR9rebTTE)
 
 
-
+## 自动宏
 ### [Word 自动宏](https://docs.microsoft.com/zh-cn/office/vba/word/concepts/customizing-word/auto-macros)
 
 | 宏名      | 运行条件                   |
