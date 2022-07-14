@@ -3,9 +3,11 @@
 ### 具体需求：
 - 按人名拆分表格，并打印表头，如下图所示
 - 原始数据
+
 ![原始数据.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/原始数据.png)
 - 要求效果
 每人1张对应的数据表格
+
 ![要求效果.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/要求效果.png)
 
 
@@ -18,14 +20,20 @@
 ### 解决方法：
 
 0. 切换视图至，分页预览
+
 ![视图-分页预览.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/视图-分页预览.png)
+
 1. 设置标题打印
+
 ![页面布局-打印标题.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/页面布局-打印标题.png)
+
 ![打印标题.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/打印标题.png)
 
 2. VBA 代码插入分页符
 	- 录制宏：单独插入分页符
+	
 	![开发工具-录制宏.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/开发工具-录制宏.png)
+	
 	![页面布局-插入分页符.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/页面布局-插入分页符.png)
 	
 	- 修改宏：批量插入分页符
@@ -46,12 +54,15 @@ End Sub
 ```
 
 - 插入完成，效果如下：
+
 ![插入分页符效果.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/插入分页符效果.png)
 
 3. 批量打印
+
 ![批量打印.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/批量打印.png)
 
 
 ### 实现效果：
 - 按人名拆分表格，并打印表头
+
 ![要求效果.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel3/要求效果.png)
