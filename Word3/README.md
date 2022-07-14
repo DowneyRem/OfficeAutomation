@@ -2,7 +2,7 @@
 
 ### 具体需求：
 
-- 连续打印上百个文档，如下下图所示
+- 连续打印上百个文档，如下图所示
 
 ![批量打印.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Word3/批量打印.png)
 
