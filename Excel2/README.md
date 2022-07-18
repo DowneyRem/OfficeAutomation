@@ -3,13 +3,11 @@
 ### 功能需求分析
 
 #### Python 处理部分
-
 0. pywin32 打开Excel
 1. 在表格内填入表格上次保存时间
 2. 关闭时，自动备份（将xlsm另存为xlsx）
 
 #### Excel VBA 处理部分
-
 0. （手动）打开Excel
 1. 在表格内填入表格上次保存时间
 2. 关闭时，自动备份（将xlsm另存为xlsx）
@@ -17,14 +15,12 @@
 ### 实现过程
 
 #### Python 实现过程
-
 0. pywin32 打开Excel
 1. 获取上次文件修改时间
 2. saveascopy 备份工作簿，将xlsm另存为xlsx
 2. ~~使用 WPS Office，分享 xlsx文件~~
 
 #### Excel VBA 实现过程
-
 0. 打开Excel，关闭时自动运行 aoto_close 宏代码
 1. 获取上次文件修改时间
 2. saveascopy 备份工作簿，将xlsm另存为xlsx

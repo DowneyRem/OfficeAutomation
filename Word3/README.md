@@ -1,13 +1,11 @@
-## Word3
+## Word3 批量打印
 
 ### 具体需求：
-
 - 连续打印上百个文档，如下图所示
 
 ![批量打印.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Word3/批量打印.png)
 
 ### 实现思路：
-
 1. 通过 Python 获取文件列表
 1. 通过 pwin32 打开word程序
 1. 调用 VBA 或直接编写打印代码，进行打印
