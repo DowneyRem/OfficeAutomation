@@ -1,0 +1,69 @@
+{
+	"research": {
+		"entity": {
+			"power_gen_1": {
+				"position": "99,2",
+				"prereqs": {
+					"upgradeparts2": true
+				}
+			},
+			"bonus_global_speed": {
+				"position": "2,2",
+				"prereqs": {
+					"starwoodrepair": true
+				}
+			},
+			"refine_1": {
+				"position": "1,0",
+				"prereqs": {
+					"starwoodrepair": true
+					"workshop": true
+				}
+			},
+			"expedition_inf": {
+				"position": "21,0",
+				"prereqs": {
+					all-strip2: true
+					dreamshield: true
+					free-expansion4: true
+					infrastructure4: true
+				}
+			},
+			"sciforpro_inf": {
+				"position": "21,1",
+				"prereqs": {
+					all-strip2: true
+					dreamshield: true
+					free-expansion4: true
+					infrastructure4: true
+				}
+			},
+			"free-expansion_inf": {
+				"position": "21,2",
+				"prereqs": {
+					all-strip2: true
+					dreamshield: true
+					free-expansion4: true
+					infrastructure4: true
+				}
+			},
+			"lunch_inf": {
+				"position": "21,3",
+				"prereqs": {
+					all-strip2: true
+					dreamshield: true
+					free-expansion4: true
+					infrastructure4: true
+				}
+			},
+			"cart_speed_1": {
+				"position": "1,1",
+				"prereqs": {
+					"starwood": true
+				}
+			}
+		}
+	}
+}
+
+
