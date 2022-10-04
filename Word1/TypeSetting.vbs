@@ -2,16 +2,10 @@ Sub 小说排版()
 Dim filename As String
 Dim Para2 As String
 
-
-'
-' 小说排版 宏
-'
-    
     
     '基本文本插入
     '没有则在第一行后插入下面的内容
-    
-    
+	'插入标题
     filename = Split(ActiveDocument.Name, ".")(UBound(Split(ActiveDocument.Name, ".")) - 1)
     Para1 = ActiveDocument.Paragraphs(1).Range.Text
     If InStr(1, Para1, filename, vbTextCompare) = 0 Then
@@ -22,13 +16,7 @@ Dim Para2 As String
     End If
     
     
-    
-    
     Para2 = ActiveDocument.Paragraphs(2).Range.Text
-    MsgBox ActiveDocument.Paragraphs(1).Range.Text
-    
-    
-    
     If InStr(1, Para2, "作者", vbTextCompare) = 0 Then
     
         Selection.HomeKey Unit:=wdStory
@@ -205,8 +193,8 @@ Dim Para2 As String
     Selection.Find.ClearFormatting
     Selection.Find.Replacement.ClearFormatting
     With Selection.Find
-        .Text = "^p^p"
-        .Replacement.Text = "^p"
+        .Text = "^p^p^p"
+        .Replacement.Text = "^p^p"
         .Forward = True
         .Wrap = wdFindContinue
         .Format = False
@@ -610,7 +598,7 @@ Dim Para2 As String
     Selection.Find.Replacement.ClearFormatting
     With Selection.Find
         .Text = "^p^p^p"
-        .Replacement.Text = "^p"
+        .Replacement.Text = "^p^p"
         .Forward = True
         .Wrap = wdFindContinue
         .Format = False
@@ -638,27 +626,27 @@ Dim Para2 As String
     Selection.Style = ActiveDocument.Styles("标题")
     
     
-    '最后一行表格设置格式
-    Para = Selection.Range.Text
-    If InStr(1, Para, "字数", vbTextCompare) = 0 Then
-        Selection.EndKey Unit:=wdLine
-        Selection.EndKey Unit:=wdStory
-        Selection.Style = ActiveDocument.Styles("正文")
-        Selection.MoveUp Unit:=wdLine, Count:=1, Extend:=wdExtend
-        Selection.Style = ActiveDocument.Styles("正文")
-    End If
+    ' 最后一行表格设置格式
+    ' Para = Selection.Range.Text
+    ' If InStr(1, Para, "字数", vbTextCompare) = 0 Then
+        ' Selection.EndKey Unit:=wdLine
+        ' Selection.EndKey Unit:=wdStory
+        ' Selection.Style = ActiveDocument.Styles("正文")
+        ' Selection.MoveUp Unit:=wdLine, Count:=1, Extend:=wdExtend
+        ' Selection.Style = ActiveDocument.Styles("正文")
+    ' End If
      
     
-    '删除字数统计最后一行表格设置格式
-    Para = Selection.Range.Text
-    If InStr(1, Para, "字数", vbTextCompare) = 0 Then
+    ' 删除字数统计最后一行表格设置格式
+    ' Para = Selection.Range.Text
+    ' If InStr(1, Para, "字数", vbTextCompare) = 0 Then
     
-        Selection.EndKey Unit:=wdLine
-        Selection.EndKey Unit:=wdStory
-        Selection.MoveUp Unit:=wdLine, Count:=2, Extend:=wdExtend
-        Selection.Delete
+        ' Selection.EndKey Unit:=wdLine
+        ' Selection.EndKey Unit:=wdStory
+        ' Selection.MoveUp Unit:=wdLine, Count:=2, Extend:=wdExtend
+        ' Selection.Delete
         
-    End If
+    ' End If
     
 
 
@@ -689,7 +677,3 @@ Dim Para2 As String
     
     
 End Sub
-
-
-
-
