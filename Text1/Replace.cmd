@@ -40,18 +40,6 @@ else (
 	if %test%==1 echo !PythonPath:"=!
 	goto RunScript
 	)
-	
-
-:TraversalDisk
-for /L %%a in (67, 1, 90) do (
-	cmd /c exit %%a
-	set disk=!=exitcodeAscii!:\
-	if exist !disk! (
-		echo !disk!
-		cd !disk!
-		goto FindPython
-		)
-	)
 
 
 :BackToParentPath
