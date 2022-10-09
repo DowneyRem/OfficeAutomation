@@ -17,20 +17,11 @@ EXIT /B %ERRORLEVEL%
 
 
 :FindPython
-call :myecho 寻找Python程序路径
+call :myecho "寻找 Python 程序路径"
 dir /s/b | findstr "python.exe" >> %PythonPathTxt%
 for /f "usebackq delims=," %%a in (%PythonPathTxt%) do (
 	set "PythonPath=%%~a"
 	if %test%==1 echo !PythonPath!
-	)
-
-
-if %test%==1 (
-	echo. > Nul
-	REM del /q %PythonPathTxt%
-	)^
-else (
-	del /q %PythonPathTxt%
 	)
 	
 	
@@ -42,12 +33,12 @@ if "%cd%"=="%~d0\" (
 		)
 	)
 if "%PythonPath%"=="" (
-	call :myecho 当前目录下没有python.exe 
+	call :myecho "当前目录下没有 python.exe"
 	goto BackToParentPath
 	)^
 else (
 	if %test%==1 echo.
-	call :myecho 已经找到python.exe
+	call :myecho "已经找到 python.exe"
 	call :myecho "!PythonPath:"=!"
 	goto RunScript
 	)
@@ -65,8 +56,9 @@ EXIT /B %ERRORLEVEL%
 
 
 :RunScript
+cd /d %~dp0
 if %test%==1 echo.
-call :myecho 寻找Python脚本路径
+call :myecho "寻找 Python 脚本路径"
 set PythonFile="%~f0"
 set PythonFile=%PythonFile:.cmd=.py%
 set PythonFile=%PythonFile:.bat=.py%
@@ -79,6 +71,7 @@ call :myecho 执行脚本
 echo USE %PythonPath:"=%
 echo RUN %PythonFile:"=%
 echo.
+cd /d %~dp0
 if %test%==1 (
 	call "%PythonPath%"
 	)^
@@ -90,6 +83,8 @@ EXIT /B %ERRORLEVEL%
 
 
 :End
+call :myecho "已删除 PythonPath.txt"
+del /q %PythonPathTxt%
 pause & exit
 EXIT /B %ERRORLEVEL% 
 
