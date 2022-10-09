@@ -1,6 +1,6 @@
 @echo off
 REM echo 切换至 UTF8
-chcp 65001 >nul
+chcp 65001 > nul
 REM echo 开启延迟变量
 setlocal EnableDelayedExpansion
 REM test=1 输出测试内容

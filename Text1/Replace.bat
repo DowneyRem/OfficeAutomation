@@ -1,26 +1,37 @@
 @echo off
 REM echo 切换至 UTF8
-chcp 65001 >nul
+chcp 65001 > nul
 REM echo 开启延迟变量
 setlocal EnableDelayedExpansion
 REM test=1 输出测试内容
-set test=0
+set test=1
 
 
 if %test%==1 echo 当前目录
 echo %~dp0
 cd /d %~dp0
+set PythonPathTxt=%~dp0PythonPath.txt
+echo.
 goto FindPython
 
 
 :FindPython
 if %test%==1 echo 寻找 Python 程序路径
-dir /s/b | findstr "python.exe" > pythonpath.txt
-for /f "usebackq delims=," %%a in (pythonpath.txt) do (
+dir /s/b | findstr "python.exe" >> %PythonPathTxt%
+for /f "usebackq delims=," %%a in (%PythonPathTxt%) do (
 	set "PythonPath=%%~a"
 	if %test%==1 echo !PythonPath!
 	)
-del /q pythonpath.txt
+
+
+if %test%==1 (
+	echo. > Nul
+	REM del /q %PythonPathTxt%
+	)^
+else (
+	del /q %PythonPathTxt%
+	)
+	
 	
 REM 循环寻找Python程序，找到后运行脚本
 if "%cd%"=="%~d0\" (
@@ -29,7 +40,6 @@ if "%cd%"=="%~d0\" (
 		goto End
 		)
 	)
-
 if "%PythonPath%"=="" (
 	if %test%==1 echo 当前目录下没有 python.exe 
 	goto BackToParentPath
@@ -41,18 +51,6 @@ else (
 	goto RunScript
 	)
 	
-
-:TraversalDisk
-for /L %%a in (67, 1, 90) do (
-	cmd /c exit %%a
-	set disk=!=exitcodeAscii!:\
-	if exist !disk! (
-		echo !disk!
-		cd !disk!
-		goto FindPython
-		)
-	)
-
 
 :BackToParentPath
 if %test%==1 echo.
@@ -68,8 +66,9 @@ if %test%==1 echo.
 if %test%==1 echo 寻找 Python 脚本路径
 set PythonFile="%~f0"
 set PythonFile=%PythonFile:.cmd=.py%
-title %PythonFile%
-if %test%==1 echo %PythonFile%
+title %PythonFile:"=%
+if %test%==1 echo %PythonFile:"=%
+
 
 if %test%==1 echo.
 if %test%==1 echo 执行脚本
@@ -87,3 +86,4 @@ goto End
 
 :End
 pause & exit
+
