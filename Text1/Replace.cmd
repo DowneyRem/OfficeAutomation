@@ -7,21 +7,38 @@ REM test=1 输出测试内容
 set test=0
 
 
-call :myecho 当前目录
-echo %~dp0
-cd /d %~dp0
-set PythonPathTxt=%~dp0PythonPath.txt
+REM 切换文件所在目录
+call :myecho "当前目录"
+set Folder=%~dp0
+echo %Folder%
+cd /d %Folder%
+
+
+REM 设置临时文件路径
+set PythonPathTxt="%Folder%PythonPath.txt"
+call :myecho "%PythonPathTxt:"=%"
 echo.
 goto FindPython
 EXIT /B %ERRORLEVEL% 
 
 
+REM 寻找 Python 程序路径
 :FindPython
 call :myecho "寻找 Python 程序路径"
 dir /s/b | findstr "python.exe" >> %PythonPathTxt%
 for /f "usebackq delims=," %%a in (%PythonPathTxt%) do (
 	set "PythonPath=%%~a"
-	if %test%==1 echo !PythonPath!
+	REM set PythonPath=%%~a
+	call :myecho "!PythonPath!"
+	)
+
+
+if %test%==1 (
+	echo. > Nul
+	REM del /q %PythonPathTxt%
+	)^
+else (
+	del /q %PythonPathTxt%
 	)
 	
 	
@@ -45,9 +62,10 @@ else (
 EXIT /B %ERRORLEVEL% 
 
 
+REM 返回上级目录
 :BackToParentPath
 if %test%==1 echo.
-call :myecho 返回上级目录
+call :myecho "返回上级目录"
 for %%a in ("%cd%") do set ParentPath=%%~dpa
 call :myecho %ParentPath%
 cd %ParentPath%
@@ -55,29 +73,35 @@ goto FindPython
 EXIT /B %ERRORLEVEL% 
 
 
+REM 拼接路径，执行脚本
 :RunScript
-cd /d %~dp0
+cd /d %Folder%
 if %test%==1 echo.
 call :myecho "寻找 Python 脚本路径"
 set PythonFile="%~f0"
 set PythonFile=%PythonFile:.cmd=.py%
 set PythonFile=%PythonFile:.bat=.py%
 title %PythonFile:"=%
-call :myecho %PythonFile:"=%
+call :myecho "%PythonFile:"=%"
 
 
+REM 检测脚本存在与否
+if not exist %PythonFile% (
+	echo 脚本不存在，退出运行
+	echo.
+	goto End
+	)
+	
+
+REM 执行脚本
 if %test%==1 echo.
-call :myecho 执行脚本
+call :myecho "执行脚本"
 echo USE %PythonPath:"=%
 echo RUN %PythonFile:"=%
 echo.
-cd /d %~dp0
-if %test%==1 (
-	call "%PythonPath%"
-	)^
-else (
-	call "%PythonPath%" "%PythonFile%"
-	)
+echo.
+REM cd /d %~dp0
+call "%PythonPath%" %PythonFile%
 goto End
 EXIT /B %ERRORLEVEL% 
 
