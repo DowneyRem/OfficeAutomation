@@ -28,10 +28,12 @@
 1. 节省每次手动录入数据以及筛选数据的时间，将原来的约15-20分钟，缩短至不到1分钟
 
 ### 最终效果
+
 ####  pixiv 数据分析
-![pixiv 数据分析](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/0.png)
+![pixiv 数据分析](0.png)
 
 ####  Excel 数据分析
+
 #### 全部小说， 阅读量/收藏量的近期增量
-![数据1](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Excel1/4.png)
+![数据1](4.png)
 #### [更多内容](https://www.kdocs.cn/l/cdYJi4uZnKtb)

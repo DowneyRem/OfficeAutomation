@@ -20,11 +20,11 @@
 1. 读取文件后 ResearchGraph.json
 2. 输入 x0 后，批量替换所有 x 大于x0 的坐标
 
-![视图-分页预览.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Text1/运行.png)
+![视图-分页预览.png](运行.png)
 
 #### Replace.cmd
 1. 搜寻 Python 程序的路径
 2. 拼合 Python 脚本的路径
 3. 指定 Python 版本，执行脚本
 
-![视图-分页预览.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Text1/程序等.png)
+![视图-分页预览.png](程序等.png)

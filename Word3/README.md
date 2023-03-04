@@ -3,7 +3,7 @@
 ### 具体需求：
 - 连续打印上百个文档，如下图所示
 
-![批量打印.png](https://raw.githubusercontent.com/DowneyRem/OfficeAutomation/main/Word3/批量打印.png)
+![批量打印.png](批量打印.png)
 
 ### 实现思路：
 1. 通过 Python 获取文件列表
